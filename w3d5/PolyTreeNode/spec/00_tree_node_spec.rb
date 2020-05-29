@@ -23,7 +23,7 @@ describe PolyTreeNode do
   end
 
   describe "#parent=" do
-    before do
+    before do #before each of these blocks 
       node2.parent = node1
       node3.parent = node1
     end
