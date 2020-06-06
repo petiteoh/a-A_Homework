@@ -1,5 +1,5 @@
-# O(n^5) polynomial time_complexity
-# O(n^5) polynomial space complexity
+# O(n!) combinatorial time
+# O(n!) combinatorial space
 def first_anagram?(str1, str2)
     all_anagrams(str1).include?(str2)
 end
@@ -18,8 +18,8 @@ def all_anagrams(str)
   possible_anagrams
 end
 
-# O(n!) combinatorial time complexity
-# O(n!) combinatorial space complexity
+# O(n^2) quadratic time complexity
+# O(n) linear space complexity
 def second_anagram?(str1, str2)
     str1.each_char.with_index do |char, i|
         index = str2.index(char)
