@@ -5,7 +5,7 @@ def first_anagram?(str1, str2)
 end
 
 def all_anagrams(str)
-    return[str] if str.length <= 1
+    return [str] if str.length <= 1
     prev_ana = all_anagrams(str[0...-1])
     possible_anagrams = []
 
@@ -19,7 +19,7 @@ def all_anagrams(str)
 end
 
 # O(n^2) quadratic time complexity
-# O(n) linear space complexity
+# O(1) constant space complexity
 def second_anagram?(str1, str2)
     str1.each_char.with_index do |char, i|
         index = str2.index(char)
@@ -48,7 +48,7 @@ def sorted_anagram(str1)
     str1
 end
 
-# O(n) linear time complexity
+# O(n^2) quadratic time complexity
 # O(1) constant space complexity
 def third_anagram?(str1, str2)
     sorted_anagram(str1) == sorted_anagram(str2)
@@ -61,7 +61,7 @@ def count_chars(str)
 end
 
 # O(n) linear time complexity
-# O(1) constant space complexity
+# O(n) linear space complexity
 def fourth_anagram?(str1, str2)
     count_chars(str1) == count_chars(str2)
 end
