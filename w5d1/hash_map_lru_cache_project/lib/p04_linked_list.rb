@@ -41,7 +41,6 @@ class LinkedList
   end
 
   def empty?
-    self.head.next == @tail.prev
   end
 
   def get(key)
@@ -51,6 +50,9 @@ class LinkedList
   end
 
   def append(key, val)
+    new = Node.new(key, val)
+    @tail.next = new
+    new.prev = @tail
   end
 
   def update(key, val)
