@@ -93,7 +93,8 @@ class ResizingIntSet
 
   def resize!
     old_store = self.store.dup
+    self.count = 0
     self.store = Array.new(num_buckets * 2) { Array.new }
-    old_store.flatten.each { |ele| @store.insert(ele) }
+    old_store.flatten.each { |ele| self.insert(ele) }
   end
 end
