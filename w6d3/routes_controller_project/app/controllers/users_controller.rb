@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
     def index
-        render json: User.all
+        if params[:username]
+            render json: User.where("username ILIKE '%#{params[:username]}%'")
+        else
+            render json: User.all
+        end
     end
 
     def create
@@ -22,7 +26,7 @@ class UsersController < ApplicationController
         if user.update(user_params)
             render json: user
         else
-            render json: user.errors.full_messages, status: :unprocessable_entity
+            render json: user.errors.full_messages, status: :unprocessable_entity #422
         end
     end
 
@@ -37,6 +41,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :email)
+        params.require(:user).permit(:username)
     end
 end
