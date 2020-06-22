@@ -1,4 +1,57 @@
-<h1> Create a new kitty! </h1>
-<form action = "<%=cats_url%>" method = "POST">
-<label for = "name"> Name </label> 
-<input id = "name" type = "text" name = "kitty[name]" value = "<%=@kitty.name%>">
+<h1>Create a new kitty!</h1>
+<form action="<%=cats_url%>" method="POST">
+
+    <label for="cat_name">Name:</label> 
+    <input 
+        id="cat_name" 
+        type="text" 
+        name="cat[name]" 
+        value="<%=@kitty.name%>"> 
+    <br/>
+
+    <label for="cat_sex_male">Sex:</label> 
+    Male<input 
+        id="cat_sex_male" 
+        type="radio" 
+        name="cat[sex]" 
+        value="M"
+        <%= @kitty.sex == "M" ? "checked" : "" %>'>
+    <label for="cat_sex_male_female">Sex:</label> 
+    Female<input 
+        id="cat_sex_female" 
+        type="radio" 
+        name="cat[sex]" 
+        value="F"
+        <%= @kitty.sex == "F" ? "checked" : "" %>'>
+    <br/>
+
+    <label for="cat_color">Color:</label>
+    <select id="cat_color" name="cat[color]">
+        <option disabled selected>--select color--</option>
+        <% Cat::CAT_COLORS.each do |color| %>
+            <option 
+                <%= @kitty.color == color ? "selected" : "" %>
+                value="<%= color %>">
+                <%= color.capitalize %>
+            </option>
+        <% end %>
+    </select>
+    <br/>
+
+    <label for="cat_birth_date">Birthday:</label>
+    <input
+        id="cat_birth_date"
+        type="date"
+        name="cat[birth_date]"
+        value='<%= @kitty.birth_date %>'>
+    <br/>
+
+    <label for="cat_description">Description:</label>
+    <textarea
+        id="cat_description"
+        name="cat[description]"
+        value='<%= @kitty.description %>'></textarea>
+    <br/>
+
+    <input type="submit" value="Create Cat!">
+</form>

@@ -12,22 +12,25 @@
 #  description :text             not null
 #
 require 'action_view'
+
 class Cat < ApplicationRecord
   include ActionView::Helpers::DateHelper
+
   CAT_COLORS = [
     "Magenta",
     "Gold",
     "Black",
     "Orange"
-]
+  ].freeze
+
   validates :birth_date, presence: true
-  validates :color, inclusion: { in: CAT_COLORS }, presence: true
-  validates :sex, inclusion: { in: ["M", "F"] }, presence: true
+  validates :color, inclusion: CAT_COLORS, presence: true
+  validates :sex, inclusion: %w(M F), presence: true
   validates :description, presence: true
   validates :name, presence: true
 
   def age
-  age = Date.today.year - birth_date.year
+    Date.today.year - birth_date.year
   end
 
 
