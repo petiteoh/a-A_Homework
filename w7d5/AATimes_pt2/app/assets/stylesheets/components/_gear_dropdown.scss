@@ -1,1 +1,29 @@
 // Use the gear_dropdown.png screenshot as a style guide
+ ul#gear-dropdown {
+     position: absolute;
+     top: 20px;
+     right: 0px;
+     cursor: pointer;
+     z-index: 6;
+     width: 100px;
+     background-color: white;
+     padding: 10px;
+     box-shadow: -1px 4px 6px 1px rgba(0, 0, 0, 0.09);
+ }
+
+ li#gear-dropdown-btn {
+    position: relative;
+    cursor: pointer;
+ }
+
+.editions li, .help li {
+    cursor: pointer;
+ }
+
+span#gear-dropdown-btn {
+    text-transform: uppercase;
+}
+
+ .editions li:hover, .help li:hover {
+     background-color: lightgray;
+ }
