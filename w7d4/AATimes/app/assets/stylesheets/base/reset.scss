@@ -1,0 +1,75 @@
+/* PHASE 1: Reset */
+
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  // they will all have their property set to "content-box" (box-sizing)
+  background: transparent;
+}
+
+ol, ul {
+  list-style: none;
+  // Remove the bullets from list items.
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+// clearfix::after {display: block; content: ‘’; clear: both;}
+// "::" selecting pseudo elements -- more specific
+.group::after {
+  // single ":" to indicate pseudo
+  display: block;
+  // by default inline element, to change it to block, specify "display: block"
+  content: '';
+  clear: both;
+}
+
+// parent: outer layer
+// inherit: get the style of closest parent
+
+// float.css.5 (line 5)
+// user ... --> browser
+
+// span-- inline
+// inline doesn't take any dimension -- as much as the content
+// and will wrap if it's longer than the screem width
+
+// nav, div (== etc... simplest form of block element) are for organizaion 
+
