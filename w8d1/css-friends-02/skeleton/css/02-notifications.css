@@ -1,0 +1,7 @@
+/* PHASE 2: Notifications */
+.badge {
+    border-radius: 80px 80px 80px 80px;
+    padding: 2px 7px 2px 7px;
+    margin: 7px;
+    background-color: black;
+}

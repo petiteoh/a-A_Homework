@@ -1,0 +1,43 @@
+<a for="all_users" href="<%= users_url %>">
+    <button id="all_users">All Users</button>
+</a>
+
+<% if current_user == @user %>
+    <h1>Welcome <%= @user.username %>!</h1>
+    <% else%>
+    <h1><%= @user.username %>'s Profile</h1>
+<% end %>
+
+<% if @user.subs.count > 0 %>
+<ul>
+    <% @user.subs.each do |sub| %>
+    <li>
+        <a href="<%= sub_url(sub) %>"><%= sub.title %></a>
+        <% if current_user == @user %>
+            <form action="<%= sub_url(sub) %>" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="hidden" name="_method" value="DELETE">
+                <button>Delete Sub</button>
+            </form>
+        <% end %>
+    </li>
+    <% end %>
+</ul>
+<% end%>
+
+<h3>Create a Sub</h3>
+
+<form action="<%= user_subs_url(@user) %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label for="sub_title">Title:</label>
+    <input type="text" name="sub[title]" id="sub_title" value="<%= @sub.title %>">
+    <br/><br/>
+
+    <label for="sub_description">Description:</label>
+    <br>
+    <textarea name="sub[description]" id="sub_description" cols="30" rows="5"><%= @sub.description %></textarea>
+
+    <br/><br/>
+    <input type="submit" value="Create Sub">
+</form>

@@ -1,0 +1,35 @@
+<h1>This is <%= @sub.title %> Sub</h1>
+<h3><%= @sub.description %></h3>
+<br>
+
+<% if @sub.posts.count > 0 %>
+    <ul>
+        <% @sub.posts.each do |post| %>
+            <li>
+            <%= post.content %><br>
+            <a href="<%= user_url(post.moderator) %>"><%= post.moderator.username %></a>
+            </li>
+        <% end %>
+    </ul>
+<% end%>
+<br>
+<h4>Add Post to Sub, here.</h3>
+
+<form action="<%= sub_posts_url(@sub) %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="post_title">Title:</label>
+  <input type="text" name="post[title]" id="post_title" value="<%= @post.title %>">
+  <br/><br/>
+
+  <label for="post_url">URL (optional):</label>
+  <input type="text" name="post[url]" id="post_url" value="<%= @post.url %>">
+  <br/><br/>
+
+  <label for="post_content">Content (optional):</label>
+  <br>
+  <textarea name="post[content]" id="post_content" cols="30" rows="5"><%= @post.content%></textarea>
+
+  <br/><br/>
+  <input type="submit" value="Create Post">
+</form>
