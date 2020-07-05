@@ -63,19 +63,16 @@ function mysteryScoping5() {
 
 // syntax error
 
-
-
-
 function madLib(verb, adjective, noun) {
     var verb = 'make'
     var adjective = 'best'
     var noun = 'guac'
-    console.log(`we shall ${verb.toUpperCase} the ${adjective.toUpperCase} ${noun.toUpperCase}`)
-};
+    console.log(`we shall ${verb.toUpperCase} the ${adjective.toUpperCase} ${noun.toUpperCase}`);
+}
 
 function isSubstring(searchString, subString) {
-    return searchString.includes(subString)
-};
+    return searchString.includes(subString);
+}
 
 // function fizzBuzz(array) {
 //     array.forEach(el => return 
@@ -95,7 +92,7 @@ function fizzBuzz(array) {
 }
 
 
-function isPrime (num) {
+function isPrime(num) {
     if (num < 2) { return false; }
 
     for (let i = 2; i < num; i++) {
@@ -104,6 +101,21 @@ function isPrime (num) {
         }
     }
 return true;
+}
+
+function sumOfNPrimes(num) {
+    let countPrimes = 0;
+    let sum = 0;
+    let i = 2;
+
+    while (countPrimes < num) {
+        if (isPrime(i)) {
+            sum += i;
+            countPrimes++;
+        }
+        i++;
+    }
+    return sum;
 }
 
 // function sumOfNPrimes (num) {

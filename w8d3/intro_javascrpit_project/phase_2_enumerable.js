@@ -1,16 +1,8 @@
-Array.prototype.myEach = function (cb) {
-    for(let i = 0; i < this.length; i++){
+Array.prototype.myEach = function(cb) {
+    for(let i = 0; i < this.length; i++) {
         cb(this[i]);
     }
 }
-
-[1,2,3].each do |el|
-    print el
-end
-
-[1,2,3].myEach(function(item){
-    console.log(item);
-})
 
 // Array.prototype.myEach = function (cb) {
 //     let arr = []
@@ -20,15 +12,33 @@ end
 //     return arr;
 // }
 
-Array.prototype.myMap = function(myMapcb) {
-    let arr = [];
-    let myEachCallback = function(el) {
-        arr.push(myMapcb(el));
-    };
-    this.myEach(myEachCallback);
-    return arr;
+Array.prototype.myMap = function(callback) {
+    const mappedArray = [];
+    this.myEach(el => {
+        mappedArray.puch(callback(el))
+    });
+    return mappedArray;
 }
 
-Array.prototype.myReduce = function(val,cb) {
-    let sum = 0;
-}
+
+
+
+
+
+
+
+
+Array.prototype.myReduce = function(callback, initialValue) {
+    let arr = this;
+
+    if (initialValue === undefined) {
+        initialValue = arr[0];
+        arr = arr.slice(1);
+    }
+
+    let result = initialValue;
+
+    arr.myEach(el => result = callback(result, el));
+
+    return result;
+};
