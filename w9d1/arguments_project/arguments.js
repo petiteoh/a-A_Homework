@@ -32,22 +32,22 @@ Function.prototype.myBind = function (ctx) {
     }
 }
 
-// Function.prototype.myBindAlt = function (ctx) {
-//     const bindArgs = Array.from(arguments).slice(1)
-//     const altThis = this
-//     return function fatArrow() {
-        // arguments is argument at the call time of the fatArrow()
-//         const callArgs = Array.from(arguments)
-//         return altThis.apply(ctx, bindArgs.concat(callArgs))
-//     }
-// }
+Function.prototype.myBindAlt = function (ctx) {
+    const bindArgs = Array.from(arguments).slice(1)
+    const altThis = this
+    return function fatArrow() {
+        //arguments is argument at the call time of the fatArrow()
+        const callArgs = Array.from(arguments)
+        return altThis.apply(ctx, bindArgs.concat(callArgs))
+    }
+}
 
-// Function.prototype.myBind = function (ctx, ...args) {
-//     const that = this
-//     return function fatArrow(...moreArgs) {
-//         return that.apply(ctx, args.concat(moreArgs))
-//     }
-// };
+Function.prototype.myBind = function (ctx, ...args) {
+    const that = this
+    return function fatArrow(...moreArgs) {
+        return that.apply(ctx, args.concat(moreArgs))
+    }
+};
 
 
 const markov = new Cat("Markov");
@@ -79,7 +79,7 @@ notMarkovSays("meow", "me");
 // true
 
 function curriedSum(numArgs) {
-    const nums = [];
+    const args = [];
 
     return function _curriedSum(num) {
         nums.push(num);
