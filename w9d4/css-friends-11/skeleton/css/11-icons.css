@@ -1,0 +1,44 @@
+/* PHASE 11: Icons */
+.icon-comment {
+    background-position-x: 0px;
+    background-position-y: 0px;
+}
+
+.icon-reblog {
+    background-position-x: 0px;
+    background-position-y: -100px;
+}
+
+.icon-favorite {
+    background-position-x: 0px;
+    background-position-y: -50px;
+}
+
+[class*="icon-"] {
+    background-image: url("https://assets.aaonline.io/fullstack/html-css/micro-projects/css-friends/docs/images/sprite.png");
+    background-size: 25px 250px;
+    display:inline-block;
+    width: 25px;
+    height: 0px;
+    overflow: hidden;
+    padding-top: 25px;
+}
+
+.icon-comment:hover {
+    background-position-x: 0px;
+    background-position-y: -25px;
+}
+
+.icon-reblog:hover {
+    background-position-x: 0px;
+    background-position-y: -125px;
+}
+
+.icon-favorite:hover {
+    background-position-x: 0px;
+    background-position-y: -75px;
+}
+
+[class*="icon-small-"] {
+    
+}
