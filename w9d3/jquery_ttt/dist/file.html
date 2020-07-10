@@ -1,0 +1,20 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+<ul class="joycean-corgis">
+  <li>Leopold</li>
+  <li>Stephen</li>
+  <li>Molly</li>
+
+  <aside>A man of genius makes no mistakes. His errors are volitional and are the portals of discovery.</aside>
+</ul>
+
+<script>
+  $('ul.joycean-corgis').on('mouseover', event => {
+    const $ul = $(event.currentTarget);
+    if ($ul.find('li').is(event.target)) {
+      debugger
+      const $newCorg = $('<li></li>').text('Buck Mulligan');
+      $('ul.joycean-corgis').append($newCorg);
+    };
+  });
+</script>
