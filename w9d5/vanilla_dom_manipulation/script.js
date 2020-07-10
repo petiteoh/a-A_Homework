@@ -44,11 +44,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const photoFormShowButton = document.querySelector(".photo-show-button"); 
   photoFormShowButton.addEventListener("click", showPhotoForm); 
+  
   const handlePhotoSubmit = (e) => { 
     e.preventDefault(); 
     const photoUrlInput = document.querySelector(".photo-url-input"); 
-    const photoUrl = photoUrlInput.value; photoUrlInput.value = ""; 
-    const newImg = document.createElement("img"); newImg.src = photoUrl; 
+    const photoUrl = photoUrlInput.value; 
+    photoUrlInput.value = ""; 
+    const newImg = document.createElement("img"); 
+    newImg.src = photoUrl; 
+
     const newPhotoLi = document.createElement("li"); 
     newPhotoLi.appendChild(newImg); 
     const dogPhotosList = document.querySelector(".dog-photos"); 
