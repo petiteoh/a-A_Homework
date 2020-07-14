@@ -1,0 +1,28 @@
+body, div, p, h1, span {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+
+
+body {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+span {
+    display: inline-block;
+    width: 500px;
+    padding: 5px;
+    background-color: orange;
+    border: 2px solid black;
+    color: white;
+}
+
+h1 {
+    font-family: Orbitron;
+    font-size: 50px;
+}
