@@ -1,0 +1,26 @@
+.minesweeper {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.tile {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    width: 315px;
+    margin:  2px;
+    flex-wrap: wrap;
+    position: absolute;
+}
+
+li {
+    list-style: none;
+    border-style: inset;
+    border-style: outset;
+    padding: 5px 12px;
+    background-color: grey;
+    overflow: hidden;
+    /* color: transparent; */
+}
