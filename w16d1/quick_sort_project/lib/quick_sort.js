@@ -18,3 +18,11 @@ module.exports = {
 
 // quick sort
 // unsorted array and you shift a pivot
+// return using the splat operator to merge all sorted
+
+// time
+// O(n log(n)) or O(n^2) because you might pivot on the highest or lowest num
+
+// space
+// O(n) 
+// in-place quickSort has a O(log (n))
