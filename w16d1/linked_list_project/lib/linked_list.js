@@ -93,12 +93,23 @@ class LinkedList {
 
     // TODO: Implement the removeHead method here
     removeHead() {
+        if (!this.head) {
+            return undefined;
+        }
 
+        const currentHead = this.head;
+        this.head = currentHead.next;
+        this.length--;
+        if (this.length === 0) {
+            this.tail = null;
+        }
+
+        return currentHead;
     }
 
     // TODO: Implement the contains method here
     contains(target) {
-
+        let node = this.head
     }
 
     // TODO: Implement the get method here
