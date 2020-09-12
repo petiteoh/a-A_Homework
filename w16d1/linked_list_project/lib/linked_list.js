@@ -109,12 +109,26 @@ class LinkedList {
 
     // TODO: Implement the contains method here
     contains(target) {
-        let node = this.head
+        let node = this.head;
+        while (node) {
+            if (node.value === target) return true;
+            node = node.next;
+        }
+
+        return false;
     }
 
     // TODO: Implement the get method here
     get(index) {
+        if (index < 0 || index >= this.length) return null;
+        let counter = 0;
+        let current = this.head;
+        while (counter !== index) {
+            current = current.next;
+            counter++
+        }
 
+        return current;
     }
 
     // TODO: Implement the set method here
