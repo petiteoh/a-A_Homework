@@ -78,6 +78,8 @@ function reverseLinkedList(linkedList) {
   linkedList.head = node;
   linkedList.head.next = prev;
   linkedList.tail = first;
+
+  return linkedList;
 }
 
 // ----------------------------------------
