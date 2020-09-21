@@ -92,11 +92,23 @@ class LRUCache {
 
   // TODO: Implement the set method here
   set(key, val) {
+    let item;
+    if (this.items[key]) {
+      item = this.items[key];
+      item.val = val;
+      this.promote(item);
+    } else {
+      if (this.isFull()) this.prune();
 
+      item = new LRUCacheItem(val, key);
+      item.node = this.ordering.unshift(item);
+      this.items[key] = item;
+      this.length += 1;
+    }
   }
 
   isFull() {
-    
+    return this.length >= this.limit;
   }
 
   prune() {
