@@ -8,6 +8,16 @@ class TreeNode {
 
 
 class BST {
+    constructor() {
+        this.root = null;
+    }
+
+    insert(val, root = new TreeNode(val)) {
+        if (!this.root) {
+            this.root = new TreeNode(val);
+            return;
+        }
+    }
    
 }
 
