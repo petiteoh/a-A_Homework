@@ -17,8 +17,21 @@ class BST {
             this.root = new TreeNode(val);
             return;
         }
+
+        if (val < root.val) {
+            if (!root.left) {
+                root.left = new TreeNode(val);
+            } else {
+                this.insert(val, root.left);
+            }
+        } else {
+            if (!root.right) {
+                root.right = new TreeNode(val);
+            } else {
+                this.insert(val, root.right);
+            }
+        }
     }
-   
 }
 
 module.exports = {
