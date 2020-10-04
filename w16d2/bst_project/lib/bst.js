@@ -12,7 +12,7 @@ class BST {
         this.root = null;
     }
 
-    insert(val, root = new TreeNode(val)) {
+    insert(val, root = this.root) {
         if (!this.root) {
             this.root = new TreeNode(val);
             return;
@@ -30,6 +30,14 @@ class BST {
             } else {
                 this.insert(val, root.right);
             }
+        }
+    }
+
+    searchRecur(val, root = this.root) {
+        if (!root) return false;
+
+        if (val < root.val) {
+
         }
     }
 }
