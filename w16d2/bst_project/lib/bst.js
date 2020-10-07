@@ -45,7 +45,21 @@ class BST {
         }
     }
 
-    sea
+    searchIter(val, root = this.root) {
+        let curr = this.root;
+
+        while (curr !== null) {
+            if (val < curr.val) {
+                curr = curr.left
+            } else if (val > curr.val) {
+                curr = curr.right
+            } else {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
 
 module.exports = {
