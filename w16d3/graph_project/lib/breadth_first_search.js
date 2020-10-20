@@ -1,13 +1,17 @@
 function breadthFirstSearch(startingNode, targetVal) {
-    if (!startingNode) return null;
+    let queue = [startingNode]
+    let visited = new Set();
 
-    let node = startingNode;
-    let queue = []
-    if (node.val === targetVal) {
-        return node;
-    } else {
-        queue.push(node.neighbor)
+    while (queue.length) {
+        let node = queue.shift();
+        if (visited.has(node)) continue;
+        visited.add(node);
+        if (node.val === targetValue) return node;
+
+        queue.push(...node.neighbors);
     }
+
+    return null;
 }
 
 module.exports = {
