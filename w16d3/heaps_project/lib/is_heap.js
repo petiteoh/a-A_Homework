@@ -3,6 +3,10 @@ function isMaxHeap(array, idx=1) {
 
 }
 
+function _isMaxHeap(array) {
+    
+}
+
 
 module.exports = {
     isMaxHeap
