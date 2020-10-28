@@ -23,7 +23,15 @@ class MaxHeap {
 
     };
 
-    
+    siftDown(idx) {
+
+    };
+
+    deleteMax() {
+
+    };
+
+
 }
 
 module.exports = {
