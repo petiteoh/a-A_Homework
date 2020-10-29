@@ -1,6 +1,6 @@
 class MaxHeap {
     constructor() {
-
+        this.array = [null];
     };
 
     getParent(idx) {
