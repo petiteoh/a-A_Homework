@@ -12,7 +12,7 @@ class MaxHeap {
     };
 
     getRightChild(idx) {
-
+        return idx * 2 + 1;
     };
 
     siftUp(idx) {
