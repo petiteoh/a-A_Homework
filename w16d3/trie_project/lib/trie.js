@@ -24,7 +24,19 @@ class Trie {
     };
 
     insertIter(word) {
+        let node = this.root;
+        
+        for (let i = 0; i < word.length; i++) {
+            let letter = word[i];
 
+            if (!(letter in node.children)) {
+                node.children[letter] = new Node();
+            }
+
+            node = node.children[letter];
+        }
+        
+        node.isTerminal = true;
     };
 
     searchRecur(word) {
